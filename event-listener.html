@@ -1,0 +1,51 @@
+
+  <!-- BEGIN CUSTOM LISTENER SWITCH -->
+  <!-- Leave always a new line at start and end of this file -->
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const body = document.querySelector("body");
+    const classList = body.classList;
+    function loadConfiguration() {
+      try {
+        const status = JSON.parse(localStorage.getItem("WADarkTheme"));
+        if (status === true) {
+          enableDarkTheme();
+        } else {
+          disableDarkTheme();
+        }
+      } catch (e) {
+        disableDarkTheme();
+      }
+    }
+    function saveConfiguration(status) {
+      localStorage.setItem("WADarkTheme", JSON.stringify(status));
+    }
+    function enableDarkTheme() {
+      // console.log("Enabling Dark theme");
+      classList.add('dark');
+      saveConfiguration(isDarkTheme());
+    }
+    function disableDarkTheme() {
+      // console.log("Disabling Dark theme");
+      classList.remove('dark');
+      saveConfiguration(isDarkTheme());
+    }
+    function isDarkTheme() {
+      const enabled = classList.contains('dark');
+      // console.log("Dark theme status: " + (enabled ? "enabled" : "disabled"));
+      return enabled;
+    }
+    function toggleDarkTheme() {
+      // console.log("Toggling Dark theme");
+      isDarkTheme() ? disableDarkTheme() : enableDarkTheme();
+    }
+    document.addEventListener("keydown", (event) => {
+      // console.log(event);
+      if (event.ctrlKey && event.code === "KeyL" /* L */) {
+        toggleDarkTheme();
+      }
+    });
+    loadConfiguration();
+  });
+  </script>
+  <!--  END  CUSTOM LISTENER SWITCH -->
