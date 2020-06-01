@@ -83,7 +83,7 @@ To toggle Dark Mode on or off you can use Ctrl + L (lower case) on any OS.
 
 ## Attributions
 
-Scripts was "borrowed" from [LanikSJ](https://github.com/LanikSJ) [Gist](https://github.com/LanikSJ/wa-dark-mode-switcher)
+Scripts was "borrowed" from [LanikSJ](https://github.com/LanikSJ) [Repo](https://github.com/LanikSJ/slack-dark-mode)
 ©️ All rights reserved by the original authors.
 
 ## Bugs
